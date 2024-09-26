@@ -16,7 +16,7 @@ public class Kafe16 {
         ukuranCup= sc.next().charAt(0);
         System.out.print("Masukkan Jumlah: ");
         jumlah= sc.nextInt();
-        System.out.print("Masukkan Keanggotaan: ");
+        System.out.print("Masukkan Keanggotaan(True/False): ");
         keanggotaan= sc.nextBoolean();
 
         double hargaMenu= 0;
@@ -43,11 +43,13 @@ public class Kafe16 {
             case 'L':
                 totalHarga+=0.4*totalHarga;
                 break;
+            default :
+                System.out.println("Tidak Tersedia");
         }
-        double diskon=keanggotaan? 0:0.1;
+        double diskon=keanggotaan? 0.1:0;
         double nominalBayar= totalHarga-(diskon*totalHarga);
 
-        System.out.println("Item pembelian: " + jumlah + "" + menu +" dengan ukuran cup " + ukuranCup);
+        System.out.println("Item pembelian: " + jumlah + " " + menu +" dengan ukuran cup " + ukuranCup);
         System.out.println("Nominal bayar: " + nominalBayar);
     }
     
